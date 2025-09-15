@@ -1,0 +1,210 @@
+/* Custom CSS variables and imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+/* Tailwind base styles */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary-50: 240 249 255;
+    --color-primary-100: 224 242 254;
+    --color-primary-200: 186 230 253;
+    --color-primary-300: 125 211 252;
+    --color-primary-400: 56 189 248;
+    --color-primary-500: 14 165 233;
+    --color-primary-600: 2 132 199;
+    --color-primary-700: 3 105 161;
+    --color-primary-800: 7 89 133;
+    --color-primary-900: 12 74 110;
+    --color-primary-950: 8 47 73;
+    
+    /* Neutral Colors */
+    --color-neural-50: 248 250 252;
+    --color-neural-100: 241 245 249;
+    --color-neural-200: 226 232 240;
+    --color-neural-300: 203 213 225;
+    --color-neural-400: 148 163 184;
+    --color-neural-500: 100 116 139;
+    --color-neural-600: 71 85 105;
+    --color-neural-700: 51 65 85;
+    --color-neural-800: 30 41 59;
+    --color-neural-900: 15 23 42;
+    --color-neural-950: 2 6 23;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply min-h-screen text-neural-900 bg-white dark:bg-neural-950 dark:text-neural-100;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    @apply px-1 py-0.5 rounded bg-neural-100 dark:bg-neural-800 text-sm;
+  }
+
+  ::selection {
+    @apply bg-primary-500/20 text-primary-600 dark:text-primary-400;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0);
+  }
+  50% { 
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes glow {
+  0% { 
+    box-shadow: 0 0 5px rgb(var(--color-primary-400)), 
+                0 0 10px rgb(var(--color-primary-400)), 
+                0 0 15px rgb(var(--color-primary-400)); 
+  }
+  100% { 
+    box-shadow: 0 0 10px rgb(var(--color-primary-500)), 
+                0 0 20px rgb(var(--color-primary-500)), 
+                0 0 30px rgb(var(--color-primary-500)); 
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #0ea5e9, 0 0 10px #0ea5e9, 0 0 15px #0ea5e9; }
+  100% { box-shadow: 0 0 10px #0ea5e9, 0 0 20px #0ea5e9, 0 0 30px #0ea5e9; }
+}
+
+@layer base {
+  :root {
+    --backdrop-blur-xs: 2px;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white dark:bg-neural-950 text-neural-900 dark:text-neural-50 transition-colors duration-300;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-neural-100 dark:bg-neural-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-secondary {
+    @apply bg-neural-100 hover:bg-neural-200 dark:bg-neural-800 dark:hover:bg-neural-700 text-neural-900 dark:text-neural-100 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-ghost {
+    @apply text-neural-700 dark:text-neural-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-neural-50 dark:hover:bg-neural-800/50 px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white/80 dark:bg-neural-900/80 backdrop-blur-sm border border-neural-200 dark:border-neural-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
+  }
+  
+  .neural-glow {
+    @apply shadow-[0_0_20px_rgba(14,165,233,0.3)] dark:shadow-[0_0_30px_rgba(14,165,233,0.4)];
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}

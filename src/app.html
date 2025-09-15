@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" %sveltekit.theme%>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<!-- Theme Color -->
+		<meta name="theme-color" content="#0ea5e9" />
+		<meta name="msapplication-TileColor" content="#0ea5e9">
+		
+		<!-- Preload Critical Fonts -->
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"></noscript>
+		
+		<!-- Manifest -->
+		<link rel="manifest" href="/manifest.json">
+		
+		<!-- Apple Touch Icons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		
+		<!-- Prevent FOUC (Flash of Unstyled Content) -->
+		<script>
+			try {
+				const theme = localStorage.getItem('mode-watcher-mode');
+				if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+					document.documentElement.classList.add('dark');
+				}
+			} catch (e) {
+				// Handle localStorage access error
+			}
+		</script>
+		
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover" class="antialiased">
+		<div style="display: contents">%sveltekit.body%</div>
+		
+		<!-- Schema.org JSON-LD -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Neural Nexus Studios",
+			"url": "https://neuralnexusstudios.com",
+			"logo": "https://neuralnexusstudios.com/logo.png",
+			"description": "Leading AI solutions provider offering cutting-edge artificial intelligence products, consulting services, and innovative AI-powered tools for businesses.",
+			"foundingDate": "2024",
+			"sameAs": [
+				"https://twitter.com/neuralnexus",
+				"https://linkedin.com/company/neural-nexus-studios",
+				"https://github.com/neural-nexus-studios"
+			],
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "+1-555-AI-NEXUS",
+				"contactType": "customer service",
+				"availableLanguage": ["English"]
+			}
+		}
+		</script>
+	</body>
+</html>

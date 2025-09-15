@@ -1,0 +1,16 @@
+{
+    "name": "Neural Nexus Studios",
+    "short_name": "Neural Nexus",
+    "description": "Leading AI solutions provider offering cutting-edge artificial intelligence products and services",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#020617",
+    "theme_color": "#0ea5e9",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "categories": ["business", "productivity", "technology"],
+    "icons": [
+      
+    ]
+  }
