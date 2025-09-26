@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { toggleMode } from 'mode-watcher';
 	import { Menu, X, Sun, Moon, Brain, ChevronDown } from 'lucide-svelte';
@@ -11,22 +12,22 @@
 	
 	// Navigation items
 	const navItems = [
-		{ href: '.', label: 'Home' },
+		{ href: '/', label: 'Home' },
 		{ 
-			href: 'services', 
+			href: '/services', 
 			label: 'Services', 
 			hasDropdown: true, 
 			submenu: [
-				{ href: 'services/ai-consulting', label: 'AI Consulting' },
-				{ href: 'services/machine-learning', label: 'Machine Learning' },
-				{ href: 'services/automation', label: 'Automation' },
-				{ href: 'services/data-science', label: 'Data Science' }
+				{ href: '/services/ai-consulting', label: 'AI Consulting' },
+				{ href: '/services/machine-learning', label: 'Machine Learning' },
+				{ href: '/services/automation', label: 'Automation' },
+				{ href: '/services/data-science', label: 'Data Science' }
 			]
 		},
-		{ href: 'products', label: 'Products' },
-		{ href: 'about', label: 'About' },
-		{ href: 'blog', label: 'Blog' },
-		{ href: 'contact', label: 'Contact' }
+		{ href: '/products', label: 'Products' },
+		{ href: '/about', label: 'About' },
+		{ href: '/blog', label: 'Blog' },
+		{ href: '/contact', label: 'Contact' }
 	];
 	
 	onMount(() => {
@@ -48,8 +49,8 @@
 	}
 	
 	function isActiveRoute(href) {
-		if (href === '/') return currentPath === '/';
-		return currentPath.startsWith(href);
+		if (href === '/') return currentPath === base || currentPath === base + '/';
+		return currentPath.startsWith(base + href);
 	}
 </script>
 
