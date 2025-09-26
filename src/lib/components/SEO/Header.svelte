@@ -11,22 +11,22 @@
 	
 	// Navigation items
 	const navItems = [
-		{ href: '/', label: 'Home' },
+		{ href: '.', label: 'Home' },
 		{ 
-			href: '/services', 
+			href: 'services', 
 			label: 'Services', 
 			hasDropdown: true, 
 			submenu: [
-				{ href: '/services/ai-consulting', label: 'AI Consulting' },
-				{ href: '/services/machine-learning', label: 'Machine Learning' },
-				{ href: '/services/automation', label: 'Automation' },
-				{ href: '/services/data-science', label: 'Data Science' }
+				{ href: 'services/ai-consulting', label: 'AI Consulting' },
+				{ href: 'services/machine-learning', label: 'Machine Learning' },
+				{ href: 'services/automation', label: 'Automation' },
+				{ href: 'services/data-science', label: 'Data Science' }
 			]
 		},
-		{ href: '/products', label: 'Products' },
-		{ href: '/about', label: 'About' },
-		{ href: '/blog', label: 'Blog' },
-		{ href: '/contact', label: 'Contact' }
+		{ href: 'products', label: 'Products' },
+		{ href: 'about', label: 'About' },
+		{ href: 'blog', label: 'Blog' },
+		{ href: 'contact', label: 'Contact' }
 	];
 	
 	onMount(() => {
@@ -64,7 +64,7 @@
 		<div class="flex items-center justify-between h-20 px-4 sm:px-6 lg:px-8">
 			<!-- Logo -->
 			<a 
-				href="/" 
+				href="." 
 				class="flex items-center space-x-3 group"
 				on:click={closeMobileMenu}
 			>
@@ -123,7 +123,7 @@
 					<Sun class="h-5 w-5 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
 					<Moon class="absolute top-2 left-2 h-5 w-5 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
 				</button>
-				<a href="/contact" class="btn-primary">
+				<a href="contact" class="btn-primary">
 					Get Started
 				</a>
 			</div>
@@ -189,7 +189,7 @@
 					{/each}
 					<div class="pt-4 border-t border-neural-200 dark:border-neural-700">
 						<a 
-							href="/contact" 
+							href="contact" 
 							on:click={closeMobileMenu}
 							class="block w-full text-center btn-primary"
 						>
