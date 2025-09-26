@@ -143,10 +143,10 @@
             </div>
             <h3 class="text-xl font-semibold mb-3">{feature.title}</h3>
             <p class="text-neural-600 dark:text-neural-400 mb-4">{feature.description}</p>
-            <a href="#" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:text-primary-800 dark:hover:text-primary-300 transition-colors">
+            <button class="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:text-primary-800 dark:hover:text-primary-300 transition-colors">
               Learn more
               <ArrowRight class="ml-1 h-4 w-4" />
-            </a>
+            </button>
           </div>
         {/each}
       </div>

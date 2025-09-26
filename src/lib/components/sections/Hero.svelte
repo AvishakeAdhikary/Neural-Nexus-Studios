@@ -176,10 +176,11 @@
 			aria-label="Close video modal"
 			transition:fade={{ duration: 300 }}
 		>
-			<div class="relative max-w-4xl w-full mx-4" on:click|stopPropagation>
+			<div class="relative max-w-4xl w-full mx-4" on:click|stopPropagation role="dialog" on:keydown={(e) => e.key === 'Escape' && toggleVideo()}>
 				<button 
 					on:click={toggleVideo}
 					class="absolute -top-12 right-0 text-white hover:text-primary-400 transition-colors duration-300"
+					aria-label="Close video modal"
 				>
 					<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />

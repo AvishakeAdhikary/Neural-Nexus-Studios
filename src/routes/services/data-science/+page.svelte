@@ -228,10 +228,10 @@
             </div>
             <h3 class="text-xl font-semibold mb-3">{caseStudy.title}</h3>
             <p class="text-neural-600 dark:text-neural-400">{caseStudy.description}</p>
-            <a href="#" class="mt-4 inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors text-sm">
+            <button class="mt-4 inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors text-sm">
               Read case study
               <ArrowRight class="ml-1 h-4 w-4" />
-            </a>
+            </button>
           </div>
         {/each}
       </div>
