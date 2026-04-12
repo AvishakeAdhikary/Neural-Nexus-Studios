@@ -1,32 +1,31 @@
 {
-	"name": "neural-nexus-studios",
-	"private": true,
-	"version": "0.0.1",
-	"type": "module",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^6.0.0",
-		"@sveltejs/adapter-static": "^3.0.9",
-		"@sveltejs/kit": "^2.22.0",
-		"@sveltejs/vite-plugin-svelte": "^6.0.0",
-		"@tailwindcss/forms": "^0.5.7",
-		"@tailwindcss/typography": "^0.5.12",
-		"autoprefixer": "^10.4.21",
-		"postcss": "^8.5.6",
-		"postcss-import": "^16.1.1",
-		"postcss-nesting": "^13.0.2",
-		"svelte": "^5.0.0",
-		"tailwindcss": "^3.4.3",
-		"vite": "^7.1.5"
-	},
-	"dependencies": {
-		"lucide-svelte": "^0.544.0",
-		"mode-watcher": "^1.1.0",
-		"svelte-seo": "^1.6.1"
-	}
+  "name": "neural-nexus-studios",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@tailwindcss/postcss": "^4.2.2",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.8.0",
+    "next": "^16.2.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^10.2.0",
+    "eslint-config-next": "^16.2.3",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^4.2.2"
+  }
 }

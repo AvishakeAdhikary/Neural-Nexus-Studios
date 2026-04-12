@@ -1,38 +1,50 @@
-# sv
+# Neural Nexus Studios — Next.js (GitHub Pages)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Dark-themed Next.js site with ChatGPT-style animations, tailored for deployment under `https://avishakeadhikary.github.io/Neural-Nexus-Studios/`.
 
-## Creating a project
+## Tech
+- Next.js App Router, static export (`output: 'export'`)
+- Tailwind CSS (dark/red/black theme), Framer Motion
+- Local JetBrains Mono via `@fontsource-variable/jetbrains-mono` (no CDNs)
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+## Local Development
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
+Dev server mounts under the base path `/Neural-Nexus-Studios`.
 
-## Building
-
-To create a production version of your app:
-
-```sh
+## Build & Export (Static)
+```bash
 npm run build
+# output in ./out ready for GitHub Pages
 ```
 
-You can preview the production build with `npm run preview`.
+## Deploy to GitHub Pages
+Two common options:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+1) Use a `gh-pages` branch
+```bash
+npm run build
+npx gh-pages -d out -b gh-pages
+```
+Then enable GitHub Pages on the `gh-pages` branch in repository settings.
+
+2) Use the `docs/` folder on `main`
+```bash
+npm run build
+git add -f out
+git commit -m "Export site"
+git subtree push --prefix out origin main:docs
+```
+Then set Pages source to `docs/`.
+
+Base path is already configured in `next.config.mjs`.
+
+## Structure
+- `app/` — pages (`/`, `/about`, `/services`, `/contact`), layout, globals
+- `components/` — animated UI (typing title, chat bubbles, glow cards)
+- `public/` — favicon, robots.txt, manifest.json
+
+## License & Assets
+All UI code here is original. Icons from `lucide-react` (MIT). Fonts from `@fontsource-variable/jetbrains-mono` (Open Font License) are bundled locally at build time — no external calls at runtime.

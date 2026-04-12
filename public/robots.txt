@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://avishakeadhikary.github.io/Neural-Nexus-Studios/sitemap.xml
