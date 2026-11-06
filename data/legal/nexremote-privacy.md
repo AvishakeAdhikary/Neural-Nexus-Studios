@@ -1,6 +1,6 @@
 # NexRemote Privacy Policy
 
-Last Updated: November 1, 2026
+Last Updated: November 6, 2026
 
 Neural Nexus Studios ("Neural Nexus Studios", "we", "our", or "us") publishes NexRemote, including the Windows host application and the Android client application. This Privacy Policy explains how NexRemote accesses, stores, uses, transmits, and protects data.
 
@@ -54,6 +54,7 @@ When you enable a connection and use NexRemote features, the app may access, dis
 - live screen-sharing frames, screen metadata, and optional system-audio stream data
 - live camera-streaming frames and camera metadata
 - phone screen sharing (optional): a live video of the Android phone's screen, its size and rotation, sent only to the Windows host you are connected to and shown there while sharing is on. It is not recorded or stored by the apps or by Neural Nexus Studios
+- phone audio while sharing (optional): when the Windows host asks for it and the phone user has allowed audio capture, the sound apps on the phone are playing (never the microphone), sent only to that Windows host and played there. It is not recorded or stored by the apps or by Neural Nexus Studios
 - PC control of a shared phone (optional): tap, swipe and Back/Home/Recents commands sent from the Windows host to the phone
 - file and folder names, paths, metadata, and file contents when you browse, read, create, move, copy, rename, or edit files through the file feature
 - task-manager and process information, such as process names, IDs, and resource usage
